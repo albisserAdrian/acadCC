@@ -1,0 +1,1 @@
+FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0ucs_world.scr" /l en-US
