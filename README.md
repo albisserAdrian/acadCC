@@ -4,20 +4,22 @@
 
 ## Instructions
 
-```FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\script-name.scr" /l en-US```
+```
+FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\script-name.scr" /l en-US
+```
 
 
 Scripts included
 
-- Audit [scripts/audir.scr](scripts/audir.scr)
-- Detach External References
-- All Layers On
-- All Layer Thawn
-- Move 
-- Purge
-- Set UCS World
-- Unlock All Layers
-- Zoom Extends
+- Audit -> [scripts/audit.scr](scripts/audit.scr)
+- Detach External References -> [scripts/audit.scr](scripts/audit.scr)
+- All Layers On -> [scripts/audit.scr](scripts/audit.scr)
+- All Layer Thawn -> [scripts/audit.scr](scripts/audit.scr)
+- Move -> [scripts/audit.scr](scripts/audit.scr)
+- Purge -> [scripts/audit.scr](scripts/audit.scr)
+- Set UCS World -> [scripts/audit.scr](scripts/audit.scr)
+- Unlock All Layers -> [scripts/audit.scr](scripts/audit.scr)
+- Zoom Extends -> [scripts/audit.scr](scripts/audit.scr)
 
 ### Working Core Console commands
 
