@@ -11,15 +11,15 @@ FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconso
 
 Scripts included
 
-- Audit -> [scripts/audit.scr](scripts/audit.scr)
-- Detach External References -> [scripts/audit.scr](scripts/audit.scr)
-- All Layers On -> [scripts/audit.scr](scripts/audit.scr)
-- All Layer Thawn -> [scripts/audit.scr](scripts/audit.scr)
-- Move -> [scripts/audit.scr](scripts/audit.scr)
-- Purge -> [scripts/audit.scr](scripts/audit.scr)
-- Set UCS World -> [scripts/audit.scr](scripts/audit.scr)
-- Unlock All Layers -> [scripts/audit.scr](scripts/audit.scr)
-- Zoom Extends -> [scripts/audit.scr](scripts/audit.scr)
+- Audit File -> [scripts/audit.scr](scripts/audit.scr)
+- Detach External References -> [scripts/detach.scr](scripts/detach.scr)
+- All Layers On -> [scripts/layon.scr](scripts/layon.scr)
+- All Layer Thawn -> [scripts/laythw.scr](scripts/laythw.scr)
+- Move All Elements -> [scripts/move.scr](scripts/move.scr)
+- Purge File -> [scripts/purge.scr](scripts/purge.scr)
+- Set UCS World -> [scripts/ucs_world.scr](scripts/ucs_world.scr)
+- Unlock All Layers -> [scripts/unlock_all.scr](scripts/unlock_all.scr)
+- Zoom Extends -> [scripts/zoom_extends.scr](scripts/zoom_extends.scr)
 
 ### Working Core Console commands
 
