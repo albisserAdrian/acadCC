@@ -6,26 +6,43 @@ Let’s say you need to purge a couple of .dwg files or detach all their externa
 
 The files in this repository are meant to help you get started creating simple batch operations. The scripts included are basic AutoCAD commands which can be easily modified and expanded.
 
+
 ## Instructions
 
 1. Drop all the .dwg files you want to modify into the root folder next to the RUN-SCRIPTS.bat file.
 
 2. Open the RUN-SCRIPTS.bat file in a text editor like Notepad. 
 
-3. Once you open the file you will se the following code:
+3. Once you open the file you will find the following code:
 
 ```batch
 FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\script-name.scr" /l en-US
 ```
-   Basically, what that line of code is saying is: for every file in the current folder `%~dp0`, open all the files in .dwg format `*.dwg` and run the AutoCAD Core Console that can be found at `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` using a script that can be found at `%~dp0scripts\script-name.scr`.
+To make that code work you will need to:
 
-   To make that code work you will need to 
+* Check that the path to the AutoCAD Core Console `accoreconsole.exe` which in my case can be found at `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` is correct. 
 
-   * Check that the path to the AutoCAD Core Console `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` is correct. In my case I am using AutoCAD 2017. 
+* Change the `script-name.scr` for the script you want to use.
 
-   * 
+If for example, you want to use the purge script on all the files in the current folder your `RUN-SCRIPTS.bat` file would look like this:
 
-Scripts included
+```batch
+FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\purge.scr" /l en-US
+```
+
+If you want to run more than one script just copy the current line of code into a new line and add the script you want to execute after the first one. For example, if you want to audit the files, purge them and detach all the layers, in that order, you would end with the following:
+
+```batch
+FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\audit.scr" /l en-US
+FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\purge.scr" /l en-US
+FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\detach.scr" /l en-US
+```
+4. Save and close the `RUN-SCRIPTS.BAT`.
+
+5. Double click on `RUN-SCRIPTS.BAT` to execute.
+
+
+## Scripts included
 
 - Audit File -> [scripts/audit.scr](scripts/audit.scr)
 - Detach External References -> [scripts/detach.scr](scripts/detach.scr)
@@ -37,7 +54,8 @@ Scripts included
 - Unlock All Layers -> [scripts/unlock_all.scr](scripts/unlock_all.scr)
 - Zoom Extends -> [scripts/zoom_extends.scr](scripts/zoom_extends.scr)
 
-### Working Core Console commands
+
+## Working Core Console commands
 
 ?
 +CONSTRAINTSETTINGS
