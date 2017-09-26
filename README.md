@@ -11,18 +11,24 @@ The files in this repository are meant to help you get started creating simple b
 
 1. Drop all the .dwg files you want to modify into the root folder next to the RUN-SCRIPTS.bat file.
 
-2. Open the RUN-SCRIPTS.bat file in a text editor like Notepad. 
-
-3. Once you open the file you will find the following code:
+2. Open the RUN-SCRIPTS.bat file in a text editor like Notepad. Once you open the file you will find the following code: 
 
 ```batch
 FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\script-name.scr" /l en-US
 ```
-To make that code work you will need to:
 
-* Check that the path to the AutoCAD Core Console `accoreconsole.exe` which in my case can be found at `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` is correct. 
+3. To make that code work you will need to:
 
-* Change the `script-name.scr` for the script you want to use.
+  * Check that the path to the AutoCAD Core Console `accoreconsole.exe` which in my case can be found at `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` is correct. 
+
+  * Change the `script-name.scr` for the script you want to use.
+
+4. Save and close the `RUN-SCRIPTS.BAT` file.
+
+5. Double click on `RUN-SCRIPTS.BAT` to execute.
+
+
+## Examples
 
 If for example, you want to use the purge script on all the files in the current folder your `RUN-SCRIPTS.bat` file would look like this:
 
@@ -37,9 +43,6 @@ FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconso
 FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\purge.scr" /l en-US
 FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\detach.scr" /l en-US
 ```
-4. Save and close the `RUN-SCRIPTS.BAT`.
-
-5. Double click on `RUN-SCRIPTS.BAT` to execute.
 
 
 ## Scripts included
