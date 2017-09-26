@@ -1,6 +1,10 @@
 # Autocad Core Console Scripts
 
+Back in 2012, AutoCAD introduced a new feature called AutoCAD Core Console. Basically, it is a stripped-down version of AutoCAD from the UI perspective that can be executed from a Command Prompt. It has almost all the capabilities of the full version with the ability to load applications, execute lisp scripts or runs simple AutoCAD commands. It is perfect if you need to automate a repetitive task and for batch operations.
 
+Let’s say you need to purge a couple of .dwg files or detach all their external references before you want to send them out to a client. You would probably open every file one by one and execute those commands manually. Depending on the quantity and size of the files, it will not only be a tedious task but also potentially bind up AutoCAD on your machine for quite some time. In contrast, it will take you only a couple of seconds to setup AutoCAD Core Console to run the same commands, letting the computer do all the work for you.
+
+The files included in this repository are meant to help you get started creating simple batch operations. The scripts included are basic AutoCAD commands which can be easily modified and expanded.
 
 ## Instructions
 
