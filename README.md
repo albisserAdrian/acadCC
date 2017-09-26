@@ -2,7 +2,7 @@
 
 Back in 2012, AutoCAD introduced a new feature called AutoCAD Core Console. Basically, it is a stripped-down version of AutoCAD from the UI perspective that can be executed from a Command Prompt. It has almost all the capabilities of the full version with the ability to load applications, execute lisp scripts or run simple AutoCAD commands. It is perfect if you need to automate a repetitive task and for batch operations.
 
-Let’s say you need to purge a couple of .dwg files or detach all their external references before you want to send them out to a client. You would probably open every file one by one and execute those commands manually. Depending on the quantity and size of the files, it will not only be a tedious task but also potentially bind up AutoCAD on your machine for quite some time. In contrast, it take only a couple of seconds to setup AutoCAD Core Console to run the same commands and let the computer do all the work.
+Let’s say you need to purge a couple of .dwg files or detach all their external references before you want to send them out to a client. You would probably open every file one by one and execute those commands manually. Depending on the quantity and size of the files, it will not only be a tedious task but also potentially bind up AutoCAD on your machine for quite some time. In contrast, it takes only a couple of seconds to setup AutoCAD Core Console to run the same commands and let the computer do all the work.
 
 The files in this repository are meant to help you get started creating simple batch operations. The scripts included are basic AutoCAD commands which can be easily modified and expanded.
 
@@ -21,7 +21,7 @@ FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconso
 
   * Check that the path to the AutoCAD Core Console `accoreconsole.exe` which in my case can be found at `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` is correct. 
 
-  * Change the `script-name.scr` for the script you want to use.
+  * Replace the `script-name.scr` for the script you want to use.
 
 4. Save and close the `RUN-SCRIPTS.BAT` file.
 
@@ -30,13 +30,19 @@ FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconso
 
 ## Examples
 
-If for example, you want to use the purge script on all the files in the current folder your `RUN-SCRIPTS.bat` file would look like this:
+Use the purge script on all the files in the current folder:
 
 ```batch
 FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\purge.scr" /l en-US
 ```
 
-If you want to run more than one script just copy the current line of code into a new line and add the script you want to execute after the first one. For example, if you want to audit the files, purge them and detach all the layers, in that order, you would end with the following:
+Use the audit script on all the files in the current folder:
+
+```batch
+FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\audit.scr" /l en-US
+```
+
+If you want to run more than one script just copy the current line of code into a new line and add the script you want to execute after the first one. For example, if you want to audit the files, purge them and detach all the layers you would end with the following:
 
 ```batch
 FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\audit.scr" /l en-US
