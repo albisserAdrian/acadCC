@@ -14,7 +14,7 @@ The files in this repository are meant to help you get started creating simple b
 
 3. Once you open the file you will se the following code:
 
-   ```batch
+```batch
 FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\script-name.scr" /l en-US
 ```
    Basically, what that line of code is saying is: for every file in the current folder `%~dp0`, open all the files in .dwg format `*.dwg` and run the AutoCAD Core Console that can be found at `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` using a script that can be found at `%~dp0scripts\script-name.scr`.
