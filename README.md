@@ -17,13 +17,13 @@ The files in this repository are meant to help you get started creating simple b
 ```batch
 FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\script-name.scr" /l en-US
 ```
-Basically, what that line of code is saying is: for every file in the current folder `%~dp0`, open all the files in .dwg format `*.dwg` and run the AutoCAD Core Console that can be found at `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` using a script that can be found at `%~dp0scripts\script-name.scr`.
+...Basically, what that line of code is saying is: for every file in the current folder `%~dp0`, open all the files in .dwg format `*.dwg` and run the AutoCAD Core Console that can be found at `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` using a script that can be found at `%~dp0scripts\script-name.scr`.
 
-To make that code work you will need to 
+...To make that code work you will need to 
 
-* Check that the path to the AutoCAD Core Console `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` is correct. In my case I am using AutoCAD 2017. 
+...* Check that the path to the AutoCAD Core Console `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` is correct. In my case I am using AutoCAD 2017. 
 
-* 
+...* 
 
 Scripts included
 
