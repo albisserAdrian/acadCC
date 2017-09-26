@@ -4,14 +4,26 @@ Back in 2012, AutoCAD introduced a new feature called AutoCAD Core Console. Basi
 
 Let’s say you need to purge a couple of .dwg files or detach all their external references before you want to send them out to a client. You would probably open every file one by one and execute those commands manually. Depending on the quantity and size of the files, it will not only be a tedious task but also potentially bind up AutoCAD on your machine for quite some time. In contrast, it will take you only a couple of seconds to setup AutoCAD Core Console to run the same commands and let the computer do all the work.
 
-The files included in this repository are meant to help you get started creating simple batch operations. The scripts included are basic AutoCAD commands which can be easily modified and expanded.
+The files in this repository are meant to help you get started creating simple batch operations. The scripts included are basic AutoCAD commands which can be easily modified and expanded.
 
 ## Instructions
+
+1. Drop all the .dwg files you want to modify into the root folder next to the RUN-SCRIPTS.bat file.
+
+2. Open the RUN-SCRIPTS.bat file in a text editor like Notepad. 
+
+3. Once you open the file you will se the following code:
 
 ```batch
 FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\script-name.scr" /l en-US
 ```
+Basically, what that line of code is saying is: for every file in the current folder `%~dp0`, open all the files in .dwg format `*.dwg` and run the AutoCAD Core Console that can be found at `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` using a script that can be found at `%~dp0scripts\script-name.scr`.
 
+To make that code work you will need to 
+
+* Check that the path to the AutoCAD Core Console `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` is correct. In my case I am using AutoCAD 2017. 
+
+* 
 
 Scripts included
 
