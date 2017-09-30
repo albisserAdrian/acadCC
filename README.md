@@ -9,9 +9,9 @@ The files in this repository are meant to help you get started creating simple b
 
 ## Instructions
 
-1. Drop all the .dwg files you want to modify into the root folder next to the RUN-SCRIPTS.bat file.
+1. Drop all the .dwg files you want to modify into the root folder next to the `RUN-SCRIPTS.bat` file.
 
-2. Open the RUN-SCRIPTS.bat file in a text editor like Notepad. Once you open the file you will find the following code: 
+2. Open the `RUN-SCRIPTS.bat` file in a text editor like Notepad. Once you open the file you will find the following code: 
 
 ```batch
 FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\script-name.scr" /l en-US
@@ -19,7 +19,7 @@ FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconso
 
 3. To make that code work you will need to:
 
-  * Check that the path to the AutoCAD Core Console `accoreconsole.exe` which in my case can be found at `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` is correct. 
+  * Check that the path to the AutoCAD Core Console (`accoreconsole.exe`) which in my case can be found at `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` is correct. 
 
   * Replace the `script-name.scr` for the script you want to use.
 
@@ -30,19 +30,19 @@ FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconso
 
 ## Examples
 
-Use the purge script on all the files in the current folder:
+* Use the purge script on all the files in the current folder:
 
 ```batch
 FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\purge.scr" /l en-US
 ```
 
-Use the audit script on all the files in the current folder:
+* Use the audit script on all the files in the current folder:
 
 ```batch
 FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\audit.scr" /l en-US
 ```
 
-If you want to run more than one script just copy the current line of code into a new line and add the script you want to execute after the first one. For example, if you want to audit the files, purge them and detach all the layers you would end with the following:
+* If you want to run more than one script just copy the current line of code into a new line and add the script you want to execute after the first one. For example, if you want to audit the files, purge them and detach all the external references you would end with the following:
 
 ```batch
 FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\audit.scr" /l en-US
