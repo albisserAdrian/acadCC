@@ -11,13 +11,13 @@ The files in this repository are meant to help you get started creating simple b
 
 1. Drop all the .dwg files you want to modify into the root folder next to the `RUN-SCRIPTS.bat` file.
 
-2. Open the `RUN-SCRIPTS.bat` file in a text editor like Notepad. Once you open the file you will find the following code: 
+2. Open the `RUN-SCRIPTS.bat` file in a text editor like Notepad. In the file you will see the following code: 
 
 ```batch
 FOR %%f IN ("%~dp0*.dwg") DO "C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe" /i "%%f" /s "%~dp0scripts\script-name.scr" /l en-US
 ```
 
-3. To make that code work you will need to:
+3. To make the code work you will need to:
 
   * Check that the path to the AutoCAD Core Console (`accoreconsole.exe`) which in my case can be found at `C:\Program Files\Autodesk\AutoCAD 2017\accoreconsole.exe` is correct. 
 
