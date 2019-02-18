@@ -1,0 +1,1 @@
+FOR %%f IN ("%~dp0*.pdf") DO ((ren "%%f" "PDF_RENAMED.pdf") && ("C:\Program Files\Autodesk\AutoCAD 2018\accoreconsole.exe" /s "%~dp0scripts\pdf_import.scr" /l en-US /isolate) && (del "PDF_RENAMED.pdf") && (ren "%~dp0DWG_SAVED.dwg" "%%~nxf.dwg"))
